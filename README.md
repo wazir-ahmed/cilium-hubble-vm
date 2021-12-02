@@ -1,5 +1,4 @@
 # Cilium/Hubble in Virtual Machines
----
 Using the following instructions, you can setup Cilium in VMs and enable hubble flows.
 
 ## Dependencies
@@ -32,14 +31,14 @@ cilium clustermesh enable
 If this fails indicating that `--service-type` needs to be given, add `--service-type NodePort` to the command above, i.e. `cilium clustermesh enable --service-type NodePort`.
 
 ## Add VMs to the control plane
-1) Create an entry for each VMs and assign labels to them.
+1) Create an entry for each VM and assign labels to them.
 ```
 cilium clustermesh vm create <hostname> --labels=<key1=value1,key2=value2...keyN=valueN>
 ```
 > - `hostname` - VM's hostname
 > - `key1=value1,key2=value2...keyN=valueN` - Labels of the VM (similar to pod labels).
 
-2) Repeat the above command for each VMs you wish to add to the control plane.
+2) Repeat the above command for each VM you wish to add to the control plane.
 
 3) Once all the VMs are added, verify it.
 ```
@@ -54,7 +53,7 @@ cilium clustermesh vm install <file-name> --config devices=<interfaces>,enable-h
 > - `file-name` - script name (example, `cilium-vm-install.sh`)
 > - `interfaces` - one or more, comma separated list of VM's physical interfaces (example - `eth0,eth1`).
 
-2) Edit the generated script and change the value of `CILIUM_IMAGE` to `${1:-docker.io/kubearmor/cilium/cilium-dev:hubble-vm}`
+2) Edit the generated script and change the value of `CILIUM_IMAGE` to `${1:-docker.io/wazirak/cilium-dev:hubble-vm}`
 
 3) **Note:**
     - If the interface name differs from one VM to another VM, then you have to generate a script of each VM by configuring the `interface` parameter appropriately.
