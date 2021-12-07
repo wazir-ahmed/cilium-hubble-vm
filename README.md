@@ -28,7 +28,8 @@ cilium status
 ```
 cilium clustermesh enable
 ```
-If this fails indicating that `--service-type` needs to be given, add `--service-type NodePort` to the command above, i.e. `cilium clustermesh enable --service-type NodePort`.
+- If this fails indicating that `--service-type` needs to be given, add `--service-type NodePort` to the command above, i.e. `cilium clustermesh enable --service-type NodePort`.
+- If it fails indicating that `cilium-ca` is not found, add `--create-ca` to the command above, i.e. `cilium clustermesh enable --create-ca`.
 
 ## Add VMs to the control plane
 1) Create an entry for each VM and assign labels to them.
