@@ -16,7 +16,7 @@ Setup Cilium `clustermesh-apiserver` in the k8s cluster which will act as a cont
 
 2) Deploy Cilium
 ```
-cilium install
+cilium install --config tunnel=vxlan
 ```
 
 3) Check the Cilium status. There should not be any errors.
