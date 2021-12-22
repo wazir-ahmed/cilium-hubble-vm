@@ -34,7 +34,7 @@ cilium clustermesh enable
 ## Add VMs to the control plane
 1) Create an entry for each VM and assign labels to them.
 ```
-cilium clustermesh vm create <hostname> --labels=<key1=value1,key2=value2...keyN=valueN>
+cilium clustermesh vm create <hostname> --labels vm=true,key1=value1,key2=value2..keyN=valueN
 ```
 > - `hostname` - VM's hostname
 > - `key1=value1,key2=value2...keyN=valueN` - Labels of the VM (similar to pod labels).
