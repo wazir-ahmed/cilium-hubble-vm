@@ -54,7 +54,7 @@ cilium clustermesh vm install <file-name> --config devices=<interfaces>,enable-h
 > - `file-name` - script name (example, `cilium-vm-install.sh`)
 > - `interfaces` - one or more, comma separated list of VM's physical interfaces (example - `eth0,eth1`).
 
-2) Edit the generated script and change the value of `CILIUM_IMAGE` to `${1:-docker.io/wazirak/cilium-dev:hubble-vm}`
+2) Edit the generated script and change the value of `CILIUM_IMAGE` to `${1:-docker.io/accuknox/cilium:latest}`
 
 3) **Note:**
     - If the interface name differs from one VM to another VM, then you have to generate a script of each VM by configuring the `interface` parameter appropriately.
